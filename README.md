@@ -1,6 +1,15 @@
 # Spaceman
 Game Description:
-This is a single player game of Spaceman
+This is a single player game of Spaceman. The game is played by clicking the
+"Generate Random Word" button which will store a random word unknown to the player. 
+The player will be able to see how many letters the word consists of indicated by 
+the number of blank spaces. The player will be able to select a letter from A through Z as buttons on the screen. 
+For each correct guess of a letter the word contains, the
+blank space will be filled by that letter. Otherwise, if a guess is incorrect, the button to select
+the letter will be greyed out and part of the spaceship will appear. The player 
+will continue to select letters until either the word is correctly guessed in which 
+case the player wins, else the spaceship will fully appear indicating the player has lost. 
+Good luck!
 
 
 

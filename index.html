@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <script render src="script.js"></script>
+  <script defer src="script.js"></script>
 </head>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 <body class="flex-ctr">
   <h1>S P A C E M A N</h1>
-  <main>
-    <h2>PLAYER</h2>
-    <h2>TIES</h2>
-    <h2>COMPUTER</h2>
-    <h1 id="p-score"></h1>
-    <h1 id="t-score"></h1>
-    <h1 id="c-score"></h1>
-    <img id="p-result">
+  <main class="container"> 
+    <div id="start-game"></div>
+    <div id="letters"></div>
+    <div id="player-selection"></div>
+    <section id="canvas"></section>
     <div id="countdown" class="flex-ctr"></div>
-    <img id="c-result">
-  
+    <div id="new-game" class="new-game-popup hide">
+        <div id="result-text"></div>
+        <button id="new-game-button">New Game</button>
+    </div>
   </main>
 </body>
 
