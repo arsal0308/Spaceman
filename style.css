@@ -10,17 +10,3 @@ html {
     width: 100%;
   }
   
-body {
-    background-color: rgb (5, 112, 202);
-}
-
-.container {
-    background-color: white;
-    font-size: 20px;
-    position: absolute;
-    width: 100vw;
-    padding: 2em;
-    border-radius: 1em;
-    box-shadow: 0 1em 2em darkblue;
-}
-
