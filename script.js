@@ -83,7 +83,7 @@ function checkGameResult() {
   if (guessedWord.join("") === randomWord) {
     resultEl.innerHTML = "You Win!";
   } else if (attemptsRemaining === 0) {
-    resultEl.innerHTML = "You Lose!";
+    resultEl.innerHTML = `You Lose! The word was ${randomWord}`;
   }
 }
 function resetGame() {
