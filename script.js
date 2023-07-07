@@ -1,10 +1,10 @@
 /*----- constants -----*/
 const generateButton = document.createElement("button");
-generateButton.textContent = "Generate Random Word";
+generateButton.innerHTML = "Generate Random Word";
 document.body.appendChild(generateButton);
 
 const resetButton = document.createElement("button");
-resetButton.textContent = "Reset Game";
+resetButton.innerHTML = "Reset Game";
 document.body.appendChild(resetButton);
 
 const resultEl = document.createElement("p");
@@ -40,8 +40,7 @@ resetButton.addEventListener("click", resetGame);
 function startNewGame() {
   generateRandomWord();
   renderLetters();
-  resultEl.textContent = "";
-  resultEl.classList.remove("win", "lose");
+  resultEl.innerHTML = "";
 }
 
 function generateRandomWord() {
@@ -70,7 +69,7 @@ function generateRandomWord() {
 }
 
 function renderRandomWord() {
-  randomWordEl.textContent = guessedWord.join("");
+  randomWordEl.innerHTML = guessedWord.join("");
 }
 function renderLetters() {
   const letters = alphabet.split("");
@@ -78,7 +77,7 @@ function renderLetters() {
 
   letters.forEach((letter) => {
     const button = document.createElement("button");
-    button.textContent = letter;
+    button.innerHTML = letter;
     button.addEventListener("click", () => selectLetter(letter));
     lettersContainer.appendChild(button);
   });
@@ -103,21 +102,19 @@ function selectLetter(letter) {
 
 function checkGameResult() {
     if (guessedWord.join("") === randomWord) {
-      resultEl.textContent = "You Win!";
-      resultEl.classList.add("win");
+      resultEl.innerHTML = "You Win!";
     } else if (attemptsRemaining === 0) {
-      resultEl.textContent = "You Lose!"; // Replaces the word with the result
-      resultEl.classList.add("lose");
+      resultEl.innerHTML = "You Lose!"; // Replaces the word with the result
     }
   }
 
 function resetGame() {
-  resultEl.textContent = "";
+  resultEl.innerHTML = "";
   resultEl.classList.remove("win", "lose");
 
   randomWord = "";
   guessedWord = [];
   attemptsRemaining = 10;
-  randomWordEl.textContent = "";
+  randomWordEl.innerHTML = "";
   lettersContainer.innerHTML = "";
 }
