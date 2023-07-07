@@ -106,7 +106,7 @@ function checkGameResult() {
       resultEl.textContent = "You Win!";
       resultEl.classList.add("win");
     } else if (attemptsRemaining === 0) {
-      resultEl.textContent = "You Lose!";
+      resultEl.textContent = "You Lose!"; // Replaces the word with the result
       resultEl.classList.add("lose");
     }
   }
