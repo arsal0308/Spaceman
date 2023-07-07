@@ -16,33 +16,21 @@ lettersContainer.id = "lettersContainer";
 document.body.appendChild(lettersContainer);
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 /*----- app's state (variables) -----*/
 let randomWord = "";
 let guessedWord = [];
 let attemptsRemaining = 10;
 /*----- cached element references -----*/
 const randomWordEl = document.getElementById("randomWord");
-
 /*----- event listeners -----*/
 generateButton.addEventListener("click", startNewGame);
 resetButton.addEventListener("click", resetGame);
 /*----- functions -----*/
-
-// Identify and initialize state variables.
-// Code the main render(), renderScores() & renderResults() functions.
-// Code the click event listener, including the win logic.
-// Update the renderResults() function to render the winner border.
-
-// Player presses "New Game" button
-
-// % Prompt user to click generate random word
 function startNewGame() {
   generateRandomWord();
   renderLetters();
   resultEl.innerHTML = "";
 }
-
 function generateRandomWord() {
   const words = [
     "boxful",
@@ -56,18 +44,11 @@ function generateRandomWord() {
     "zombie",
     "juicy",
   ];
-
   const randomIndex = Math.floor(Math.random() * words.length);
   randomWord = words[randomIndex].toUpperCase();
-
-  // % Initiate an array of same length as word, but each character is an “_”.
   guessedWord = Array(randomWord.length).fill("_");
-
-  // % Initialize variable attempts remaining = 10
-
   renderRandomWord();
 }
-
 function renderRandomWord() {
   randomWordEl.innerHTML = guessedWord.join("");
 }
@@ -82,7 +63,6 @@ function renderLetters() {
     lettersContainer.appendChild(button);
   });
 }
-
 function selectLetter(letter) {
   if (attemptsRemaining > 0 && !guessedWord.includes(letter)) {
     let matched = false;
@@ -99,15 +79,13 @@ function selectLetter(letter) {
     checkGameResult();
   }
 }
-
 function checkGameResult() {
-    if (guessedWord.join("") === randomWord) {
-      resultEl.innerHTML = "You Win!";
-    } else if (attemptsRemaining === 0) {
-      resultEl.innerHTML = "You Lose!"; // Replaces the word with the result
-    }
+  if (guessedWord.join("") === randomWord) {
+    resultEl.innerHTML = "You Win!";
+  } else if (attemptsRemaining === 0) {
+    resultEl.innerHTML = "You Lose!";
   }
-
+}
 function resetGame() {
   resultEl.innerHTML = "";
   resultEl.classList.remove("win", "lose");

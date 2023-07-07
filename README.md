@@ -40,7 +40,7 @@ Good luck!
 
 # Getting Started
 
-[Click to Play Spaceman!](https://github.com/arsal0308/Spaceman)
+[Click to Play Spaceman!](https://arsal0308.github.io/Spaceman/)
 
 # Next Steps
 
