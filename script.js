@@ -3,6 +3,10 @@ const generateButton = document.createElement("button");
 generateButton.textContent = "Generate Random Word";
 document.body.appendChild(generateButton);
 
+const resetButton = document.createElement("button");
+resetButton.textContent = "Reset Game";
+document.body.appendChild(resetButton);
+
 const resultEl = document.createElement("p");
 resultEl.id = "randomWord";
 document.body.appendChild(resultEl);
@@ -24,7 +28,7 @@ const randomWordEl = document.getElementById("randomWord");
 
 /*----- event listeners -----*/
 generateButton.addEventListener("click", startNewGame);
-
+resetButton.addEventListener("click", resetGame);
 /*----- functions -----*/
 
 // Identify and initialize state variables.
@@ -47,7 +51,7 @@ function startNewGame() {
         "kayak", "zombie", "juicy"]
 
         const randomIndex = Math.floor(Math.random() * words.length);
-        randomWord = words[randomIndex];
+        randomWord = words[randomIndex].toUpperCase();
 
     // % Initiate an array of same length as word, but each character is an “_”.
         guessedWord = Array(randomWord.length).fill("_");
@@ -76,6 +80,7 @@ function startNewGame() {
             if (attemptsRemaining > 0 && !guessedWord.includes(letter)) {
                 let matched = false;
                 for (let i = 0; i < randomWord.length; i++) {
+                  
                     if (randomWord[i] === letter) {
                         guessedWord[i] = letter;
                         matched = true;
@@ -97,41 +102,10 @@ function startNewGame() {
             }
         }
 
-        // % While loop, runs while attempts remaining > 0
-        // % Prompt user to press a button from the selection of letters a through z.
-        
-    // % For loop: number of iterations = length of word
-            // % For each iteration, test whether the button selected by the player matches
-            // a letter of the randomly generated word.
-            // % End the loop.
-
-            // % If Condition 1: check whether any letters matched,
-            // % If true, variable “lives” is decreased by 1
-        // % Else if: If letters do match,
-            // % replace the “_” with said letter.
-
-        //     for (let i = 0; i < wordLength; i++) {
-        //         if (selectedLetter === randomWord[i]) {
-        //             guessedWord[i] = selectedLetter;
-        //         }
-        //     }
-            
-        //     if (!guessedWord.includes(selectedLetter)) {
-        //         attemptsRemaining --;
-        //     }
-    
-        // // % If condition 2: check whether new string is equal to randomly generated word
-        //     // % If true, Print “YOU WIN!” & end loop
-
-        //     if (guessedWord.join("") === randomWord) {
-        //         console.log("YOU WIN");
-        //         break; // breaks the for loop
-        //     }
-
-        // % If condition 3: Check whether lives = 0
-        // % If true, print “YOU LOSE” & end loop
-    // % End while loop
-           
-
-
-  
+        function resetGame() {
+            randomWord = "";
+            guessedWord = [];
+            attemptsRemaining = 10;
+            randomWordEl.textContent = "";
+            lettersContainer.innerHTML = "";
+          }
